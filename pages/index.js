@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Layout } from '../components/layout'
+import { Layout } from '../components/Layout'
 import styles from '../shared/styles/page.module.css'
 
 export default function Home() {

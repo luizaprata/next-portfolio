@@ -1,9 +1,0 @@
-.header {
-  height: 40px;
-  flex: 1;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  background-color:khaki;
-}
