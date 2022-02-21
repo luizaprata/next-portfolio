@@ -1,12 +1,13 @@
 import Router from "next/router";
 import NProgress from "nprogress";
 
-let timer;
 let isLoading = false;
 let activeRequests = 0;
 const delay = 250;
 
 function load() {
+  console.log("load", isLoading)
+
   if (isLoading) {
     return;
   }

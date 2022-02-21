@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic'
 
 const TopProgressBar = dynamic(
   () => {
+    console.log("PROGRESS")
     return import("../components/TopProgressBar");
   },
   { ssr: false },
