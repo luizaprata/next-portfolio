@@ -4,7 +4,6 @@ import { Layout } from '../components/Layout'
 import styles from '../shared/styles/page.module.css'
 
 export default function About({ user }) {
-  console.log(user)
 
   return (
     <>
@@ -18,6 +17,7 @@ export default function About({ user }) {
           <h1>About</h1>
           <Image src={user.avatar_url} alt="Vercel Logo" width={150} height={150} />
 
+          <p>{user.name}</p>
           <p>Public repos: {user.public_repos}</p>
 
         </main>
@@ -28,13 +28,19 @@ export default function About({ user }) {
 
 
 export async function getStaticProps() {
-  const res = await fetch('https://api.github.com/users/luizaprata')
-  const user = await res.json()
+  try {
+    const res = await fetch('https://api.github.com/users/luizaprata')
+    const user = await res.json()
 
-  console.log(user)
-  return {
-    props: {
-      user,
-    },
+    if (res.status > 200)
+      return { notFound: true }
+
+    return {
+      props: {
+        user,
+      },
+    }
+  } catch {
+    return { notFound: true }
   }
 }
