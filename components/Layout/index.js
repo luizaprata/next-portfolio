@@ -4,7 +4,7 @@ import styles from './layout.module.css'
 
 export function Layout({ children }) {
   return (
-    <div>
+    <>
       <header className={styles.header}>
         <Link href={'/'}>
           <a>home</a>
@@ -15,6 +15,9 @@ export function Layout({ children }) {
         <Link href={'/hire-me'}>
           <a>hire-me</a>
         </Link>
+        <Link href={'/blog'}>
+          <a>blog</a>
+        </Link>
       </header>
       {children}
       <footer>
@@ -22,6 +25,6 @@ export function Layout({ children }) {
           <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </span>
       </footer>
-    </div>
+    </>
   )
 }
